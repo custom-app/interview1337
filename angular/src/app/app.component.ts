@@ -11,7 +11,7 @@ import {updateUserRequest} from './store/user.actions';
     <div>Name: {{user.name}}</div>
     <div>Id: {{user.balance}}</div>
     <button (click)="setName()">Set name "Jason"</button>
-    <button (click)="addBalance()">Add balance</button>
+    <button (click)="addBalance()">Add 0.2 to balance</button>
     <button (click)="save()">Save</button>
   `,
   changeDetection: ChangeDetectionStrategy.OnPush,
@@ -31,11 +31,11 @@ export class AppComponent {
     this.user.name = 'Jason'
   }
 
-  save(): void {
-    this.store.dispatch(updateUserRequest({data: this.user}))
-  }
-
   addBalance(): void {
     this.user.balance += 0.2
+  }
+
+  save(): void {
+    this.store.dispatch(updateUserRequest({data: this.user}))
   }
 }
