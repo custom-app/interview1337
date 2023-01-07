@@ -20,7 +20,7 @@ import {updateUserRequest} from './store/user.actions';
     <div>Name: {{user.name}}</div>
     <div>Balance: {{user.balance}}</div>
     <div>Items: {{user.items | json}}</div>
-    <button (click)="drop()">Drop items 1-10</button>
+    <button (click)="dropItems()">Drop items 1-10</button>
     <button (click)="addBalance()">Add 0.2 to balance</button>
     <button (click)="save()">Save</button>
   `,
@@ -42,7 +42,7 @@ export class AppComponent {
     this.user.balance += 0.2
   }
 
-  drop(): void {
+  dropItems(): void {
     this.itemsToDrop.push(1, 2, 3, 4, 5, 6, 7, 8, 9, 10)
   }
 
