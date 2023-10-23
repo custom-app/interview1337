@@ -5,7 +5,7 @@ import {OrderCard, OrderWithItems} from '../OrderCard/OrderCard.tsx';
 import styles from './Orders.module.scss'
 import {styled} from '@mui/material';
 import {DatePicker} from '@mui/x-date-pickers';
-import * as dayjs from 'dayjs';
+import dayjs from 'dayjs';
 import {Dayjs} from 'dayjs';
 
 const StyledDuration = styled('div')({
@@ -24,7 +24,7 @@ export const Orders: FC = () => {
       start: dayjs().subtract(10, 'day'),
       finish: dayjs(),
     })
-  }, [filters]);
+  }, [filters, setFilters]);
 
   const [orders, setOrders] = useState<Order[]>()
   const [items, setItems] = useState<Item[]>()
