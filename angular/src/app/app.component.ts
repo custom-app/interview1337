@@ -4,6 +4,7 @@ import {AppState} from './store';
 import {Store} from '@ngrx/store';
 import {selectUser} from './store/user.selectors';
 import {updateUserRequest} from './store/user.actions';
+import {Observable} from 'rxjs';
 
 /**
  * Initial user
@@ -31,7 +32,8 @@ export class AppComponent {
   itemsToDrop: number[] = []
 
   constructor(private store: Store<AppState>) {
-    this.store.select(selectUser).subscribe(user => {
+    const userInfo$: Observable<User> = this.store.select(selectUser)
+    userInfo$.subscribe(user => {
       this.user = user;
     })
     this.user.name = 'Mask'
