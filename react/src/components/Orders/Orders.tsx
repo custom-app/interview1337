@@ -15,6 +15,7 @@ const StyledDuration = styled('div')({
   justifyContent: 'stretch',
 })
 
+// Order состоит из нескольких Item
 export const Orders: FC = () => {
 
   const [filters, setFilters] = useState<{ start: Dayjs | null, finish: Dayjs | null }>({start: null, finish: null})
